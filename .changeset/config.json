@@ -2,12 +2,12 @@
   "$schema": "https://unpkg.com/@changesets/config@2.3.0/schema.json",
   "changelog": [
     "@changesets/changelog-github",
-    { "repo": "kodverk/umea-open-api" }
+    { "repo": "kodverk/open-api" }
   ],
   "commit": false,
   "access": "public",
   "baseBranch": "main",
   "updateInternalDependencies": "patch",
-  "fixed": [["@kodverk/public-beaches"]],
-  "ignore": ["@examples/nextjs"]
+  "fixed": [["@kodverk/open-api-umea"]],
+  "ignore": ["@kodverk/docs"]
 }
