@@ -1,7 +1,2 @@
-# Acme Corp (Library Edition)
+# @kodverket/umea-open-api
 
-Starter template for your next TypeScript library monorepo.
-
-Also functioning as a prisma generator to reduce bundle sizes by a few megabytes
-# umea-open-api
-# umea-open-api
