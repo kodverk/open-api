@@ -1,7 +1,7 @@
 import { defineConfig } from "tsup";
 
 export default defineConfig((opts) => ({
-  entryPoints: ["src/bin.ts"],
+  entryPoints: ["src/index.ts"],
   format: ["cjs"],
   clean: !opts.watch,
   outDir: "dist",
