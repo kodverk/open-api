@@ -2,6 +2,8 @@
   "name": "@kodverk/open-api-umea",
   "version": "0.1.0",
   "type": "module",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
   "exports": {
     ".": {
       "import": "./dist/index.js",
@@ -30,7 +32,6 @@
   ],
   "scripts": {
     "clean": "git clean -xdf node_modules",
-    "start": "node dist/bin.js",
     "build": "tsup",
     "dev": "tsup --watch",
     "lint": "eslint . --ext .ts",
