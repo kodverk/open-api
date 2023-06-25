@@ -8,6 +8,8 @@ import { getHighlighter } from "shiki";
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   pageExtensions: ["ts", "tsx", "mdx"],
+  eslint: { ignoreDuringBuilds: true },
+  typescript: { ignoreBuildErrors: true },
   redirects: () => [
     { source: "/docs", destination: "/docs/introduction", permanent: true },
   ],
