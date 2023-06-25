@@ -9,7 +9,7 @@
     "check": "pnpm format:check && turbo lint typecheck",
     "clean": "git clean -xdf node_modules",
     "dev": "turbo --filter \"./packages/*\" dev",
-    "dev:docs": "turbo --filter=@kodverket/docs dev",
+    "dev:docs": "turbo --filter=docs dev",
     "lint": "turbo lint && manypkg check",
     "lint:fix": "turbo lint -- --fix && manypkg fix",
     "test": "turbo test",
