@@ -1,5 +1,5 @@
-import fs from "fs";
 import { exec } from "child_process";
+import fs from "fs";
 
 const pkgJsonPaths = ["packages/public-beaches/package.json"];
 
@@ -22,7 +22,7 @@ try {
       const content = JSON.stringify(pkg, null, "\t") + "\n";
       const newContent = content.replace(
         new RegExp(`"@kodverk/\\*": "${oldVersion}"`, "g"),
-        `"@kodverk/*": "${newVersion}"`
+        `"@kodverk/*": "${newVersion}"`,
       );
 
       fs.writeFileSync(pkgJsonPath, newContent);
