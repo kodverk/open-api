@@ -1,51 +1,41 @@
-name: Bug Report
-description: File a bug report
-title: "[Bug]: "
-labels: ["bug", "triage"]
-assignees:
-  - octocat
+name: Bug report
+description: Something is not working correctly.
+labels: "bug"
+
 body:
+  - type: textarea
+    attributes:
+      label: Describe the bug
+      description: >-
+        A clear and concise description of what the bug is, including the 
+        expected behaviour and what has gone wrong.
+        
+        Please include screenshots, if applicable.
+    validations:
+      required: true
+
+  - type: textarea
+    attributes:
+      label: How to Reproduce
+      description: >-
+        Please provide steps to reproduce this bug, with the smallest possible
+        set of source files.
+      placeholder: |
+        ""
+    validations:
+      required: false
+
   - type: markdown
     attributes:
       value: |
-        Thanks for taking the time to fill out this bug report!
-  - type: input
-    id: contact
-    attributes:
-      label: Contact Details
-      description: How can we get in touch with you if we need more info?
-      placeholder: ex. email@example.com
-    validations:
-      required: false
+        ## Environment info
+        
   - type: textarea
-    id: what-happened
     attributes:
-      label: What happened?
-      description: Also tell us, what did you expect to happen?
-      placeholder: Tell us what you see!
-      value: ""
-    validations:
-      required: true
-  - type: dropdown
-    id: version
-    attributes:
-      label: Version
-      description: What version of our software are you running?
-      options:
-        - 0.0.0
-    validations:
-      required: true
-  - type: textarea
-    id: logs
-    attributes:
-      label: Relevant log output
-      description: Please copy and paste any relevant log output. This will be automatically formatted into code, so no need for backticks.
-      render: shell
-  - type: checkboxes
-    id: terms
-    attributes:
-      label: Code of Conduct
-      # description: By submitting this issue, you agree to follow our [Code of Conduct](https://example.com)
-      options:
-        - label: I agree to follow this project's Code of Conduct
-          required: true
+      label: Additional context
+      description: >-
+        Add any other context about the problem here, for example:
+        
+        * Any other tools used (Browser, TeX, etc) with versions
+        * Reference to another issue or pull request
+        * URL to some external resource
