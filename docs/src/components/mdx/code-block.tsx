@@ -1,9 +1,10 @@
 "use client";
 
 import { useRef, useState } from "react";
-import { CheckCheck, Copy } from "lucide-react";
-import { Icons } from "../icons";
 import { cn } from "@/lib/cn";
+import { CheckCheck, Copy } from "lucide-react";
+
+import { Icons } from "../icons";
 
 export type CodeblockProps = React.DetailedHTMLProps<
   React.HTMLAttributes<HTMLPreElement>,
@@ -49,17 +50,17 @@ export function Codeblock(props: CodeblockProps) {
         }}
         className="absolute right-2 top-[10px] z-20 h-8 w-8 cursor-pointer rounded text-muted-foreground hover:bg-muted"
       >
-        <div className="relative p-1 w-full h-full">
+        <div className="relative h-full w-full p-1">
           <Copy
             className={cn(
               "absolute h-6 w-6 p-0 transition-all",
-              copied && "scale-0"
+              copied && "scale-0",
             )}
           />
           <CheckCheck
             className={cn(
               "absolute h-6 w-6 scale-0 p-0 transition-all",
-              copied && "scale-100"
+              copied && "scale-100",
             )}
           />
         </div>

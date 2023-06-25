@@ -5,22 +5,29 @@
   "type": "module",
   "scripts": {
     "build": "turbo --filter \"./packages/*\" build",
+    "build:docs": "turbo --filter=docs build",
+    "check": "pnpm format:check && turbo lint typecheck",
     "clean": "git clean -xdf node_modules",
     "dev": "turbo --filter \"./packages/*\" dev",
     "dev:docs": "turbo --filter=@kodverket/docs dev",
     "lint": "turbo lint && manypkg check",
     "lint:fix": "turbo lint -- --fix && manypkg fix",
     "test": "turbo test",
-    "typecheck": "turbo typecheck"
+    "typecheck": "turbo typecheck",
+    "format": "prettier --write \"**/*.{js,cjs,mjs,ts,tsx,md,json}\" --ignore-path .gitignore",
+    "format:check": "prettier --check \"**/*.{js,cjs,mjs,ts,tsx,md,json}\" --ignore-path .gitignore"
   },
   "dependencies": {
     "@changesets/changelog-github": "^0.4.8",
     "@changesets/cli": "^2.26.1",
+    "@ianvs/prettier-plugin-sort-imports": "^4.0.2",
     "@manypkg/cli": "^0.20.0",
     "@types/node": "^18.16.18",
     "@typescript-eslint/eslint-plugin": "^5.59.0",
     "@typescript-eslint/parser": "^5.59.0",
     "eslint": "^8.39.0",
+    "prettier": "^2.8.8",
+    "prettier-plugin-tailwindcss": "^0.3.0",
     "turbo": "^1.9.3",
     "typescript": "^5.0.4",
     "vitest": "^0.31.0"

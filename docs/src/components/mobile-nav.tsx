@@ -2,18 +2,17 @@
 
 import * as React from "react";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
+import { cn } from "@/lib/cn";
+import { PopoverClose } from "@radix-ui/react-popover";
 
+import { Icons } from "./icons";
+import { NavItem } from "./main-nav";
+import { NestedNavItem } from "./sidebar";
+import { ThemeToggle } from "./theme-toggle";
 import { Button } from "./ui/button";
 import { Popover, PopoverContent, PopoverTrigger } from "./ui/popover";
 import { ScrollArea } from "./ui/scroll-area";
-
-import { ThemeToggle } from "./theme-toggle";
-import { NavItem } from "./main-nav";
-import { NestedNavItem } from "./sidebar";
-import { PopoverClose } from "@radix-ui/react-popover";
-import { cn } from "@/lib/cn";
-import { Icons } from "./icons";
-import { usePathname } from "next/navigation";
 
 export function MobileDropdown(props: {
   items: { main: NavItem[]; docs: NestedNavItem[] };
@@ -34,12 +33,12 @@ export function MobileDropdown(props: {
       <PopoverTrigger asChild>
         <Button
           variant="ghost"
-          className="mr-2 px-0 hamburger space-x-2 hover:bg-transparent focus-visible:bg-transparent focus-visible:ring-0 focus-visible:ring-offset-0 md:hidden"
+          className="hamburger mr-2 space-x-2 px-0 hover:bg-transparent focus-visible:bg-transparent focus-visible:ring-0 focus-visible:ring-offset-0 md:hidden"
         >
           <Icons.menu className={cn("h-6 w-6", isOpen && "open")} />
         </Button>
       </PopoverTrigger>
-      <PopoverContent className="z-40 mt-2 h-[calc(100vh-4rem)] w-screen bg-background animate-none rounded-none border-none transition-transform md:hidden">
+      <PopoverContent className="z-40 mt-2 h-[calc(100vh-4rem)] w-screen animate-none rounded-none border-none bg-background transition-transform md:hidden">
         <ScrollArea className="pb-8">
           {props.items.docs.map((item, index) => (
             <div key={index} className="flex flex-col space-y-3 pt-6">
@@ -52,7 +51,7 @@ export function MobileDropdown(props: {
                         href={item.href}
                         className={cn(
                           "flex py-1 text-base font-medium text-muted-foreground transition-colors hover:text-primary",
-                          item.href === pathname && "text-foreground"
+                          item.href === pathname && "text-foreground",
                         )}
                         target={item.external ? "_blank" : ""}
                         rel={item.external ? "noreferrer" : ""}
