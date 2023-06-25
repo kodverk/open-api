@@ -5,6 +5,7 @@
   "type": "module",
   "scripts": {
     "build": "turbo --filter \"./packages/*\" build",
+    "build:docs": "turbo --filter=docs build",
     "check": "pnpm format:check && turbo lint typecheck",
     "clean": "git clean -xdf node_modules",
     "dev": "turbo --filter \"./packages/*\" dev",
