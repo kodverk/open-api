@@ -1,11 +1,11 @@
 import {
+  Command,
   LucideProps,
   Moon,
   SunMedium,
+  TerminalSquare,
   Twitter,
   type Icon as LucideIcon,
-  TerminalSquare,
-  Command,
 } from "lucide-react";
 
 export type Icon = LucideIcon;

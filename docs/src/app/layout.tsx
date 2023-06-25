@@ -1,14 +1,14 @@
 import "@/styles/globals.css";
+
 import { Metadata } from "next";
-import { Analytics } from "@vercel/analytics/react";
+import { Inter, JetBrains_Mono } from "next/font/google";
+import localFont from "next/font/local";
 import { siteConfig } from "@/app/site-config";
-import { cn } from "@/lib/cn";
 import { SiteHeader } from "@/components/site-header";
 import { TailwindIndicator } from "@/components/tailwind-indicator";
 import { ThemeProvider } from "@/components/theme-provider";
-
-import { JetBrains_Mono, Inter } from "next/font/google";
-import localFont from "next/font/local";
+import { cn } from "@/lib/cn";
+import { Analytics } from "@vercel/analytics/react";
 
 const fontSans = Inter({
   subsets: ["latin"],
@@ -61,7 +61,7 @@ export default function RootLayout({ children }: RootLayoutProps) {
             "min-h-screen font-sans antialiased",
             fontSans.variable,
             fontCal.variable,
-            fontMono.variable
+            fontMono.variable,
           )}
         >
           <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
