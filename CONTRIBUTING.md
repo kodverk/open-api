@@ -1,14 +1,14 @@
 # Contributing Guidelines
 
-Thank you for considering contributing to the open-api-umea repository! We appreciate your interest in helping us improve our project. This document outlines the guidelines and expectations for contributing to our repository.
+Thank you for considering contributing to the open-api repository! We appreciate your interest in helping us improve our project. This document outlines the guidelines and expectations for contributing to our repository.
 
 ## Code of Conduct
 
-We expect all contributors to adhere to our [Code of Conduct](https://github.com/kodverk/open-api-umea/blob/main/CODE_OF_CONDUCT.md) when participating in our project. Please read it carefully before making any contributions.
+We expect all contributors to adhere to our [Code of Conduct](https://github.com/kodverk/open-api/blob/main/CODE_OF_CONDUCT.md) when participating in our project. Please read it carefully before making any contributions.
 
 ## Getting Started
 
-To contribute to the open-api-umea repository, follow the steps outlined below.
+To contribute to the open-api repository, follow the steps outlined below.
 
 ## Prerequisites
 
@@ -53,7 +53,6 @@ _Here is a collection of some useful scripts that can be found in the repo_
 | `pnpm lint:fix` | Lints the code and fixes any errors                     |
 | `pnpm check`    | Checks your code for typeerrors, formatting and linting |
 
-
 When making commits, make sure to follow the [conventional commit](https://www.conventionalcommits.org/en/v1.0.0/) guidelines, i.e. prepending the message with `feat:`, `fix:`, `chore:`, `docs:`, etc... You can use `git status` to double check which files have not yet been staged for commit:
 
 ```bash
@@ -88,7 +87,6 @@ When all that's done, it's time to file a pull request to upstream:
 gh pr create --web
 ```
 
-
 # License
-By contributing to this project, you agree that your contributions will be licensed under the [LICENSE](https://github.com/kodverk/open-api-umea/blob/main/LICENSE) file of the repository.
 
+By contributing to this project, you agree that your contributions will be licensed under the [LICENSE](https://github.com/kodverk/open-api/blob/main/LICENSE) file of the repository.
