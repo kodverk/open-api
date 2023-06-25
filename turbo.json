@@ -10,17 +10,14 @@
       "outputs": ["dist/**", ".next/**", ".nuxt"]
     },
     "lint": {
-      "dependsOn": ["build"],
-      "outputs": []
+      "cache": false
+    },
+    "lint:fix": {
+      "cache": false
     },
     "test": {
-      "dependsOn": ["build"],
-      "outputs": []
+      "cache": false
     },
-    "typecheck": {
-      "dependsOn": ["build"],
-      "outputs": [],
-      "cache": true
-    }
+    "typecheck": {}
   }
 }
