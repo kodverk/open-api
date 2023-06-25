@@ -1,0 +1,9 @@
+"📌 area: docs":
+  - any: ["docs/**/*"]
+
+"📚 documentation":
+  - any: ["docs/**/*"]
+  - any: ["**/*.md"]
+
+"📌 area: ci":
+  - any: [".github/**/*"]
