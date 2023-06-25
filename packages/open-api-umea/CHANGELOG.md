@@ -1,5 +1,11 @@
 # @kodverket/public-beaches
 
+## 0.1.1
+
+### Patch Changes
+
+- [#17](https://github.com/kodverk/open-api/pull/17) [`bc3c562`](https://github.com/kodverk/open-api/commit/bc3c5623d7e7de8f72053fda3de1f19cc603f5fc) Thanks [@JohnVicke](https://github.com/JohnVicke)! - Fix imports
+
 ## 0.1.0
 
 ### Minor Changes
