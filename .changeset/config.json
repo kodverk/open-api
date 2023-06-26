@@ -5,6 +5,6 @@
   "access": "public",
   "baseBranch": "main",
   "updateInternalDependencies": "patch",
-  "fixed": [["@kodverk/open-api-umea"]],
+  "fixed": [["@kodverk/umea-open-api"]],
   "ignore": ["@kodverk/docs"]
 }

@@ -1,1 +1,0 @@
-# @kodverket/open-api-umea

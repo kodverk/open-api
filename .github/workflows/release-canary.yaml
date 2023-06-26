@@ -56,7 +56,7 @@ jobs:
         run: |
           pnpm build
           echo "//registry.npmjs.org/:_authToken=${{ secrets.NPM_TOKEN }}" > .npmrc
-          pnpm publish packages/open-api-umea --access public --tag canary --no-git-checks
+          pnpm publish packages/umea-open-api --access public --tag canary --no-git-checks
 
       - name: Create a new comment notifying of the new canary version
         uses: actions/github-script@v6
