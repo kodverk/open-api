@@ -33,7 +33,6 @@ export function DocsSidebarNavItems(props: {
   items: NestedNavItem[];
   pathname: string | null;
 }) {
-  console.log({ items: props.items });
   return props.items?.length ? (
     <div className="grid grid-flow-row auto-rows-max text-sm">
       {props.items.map((item, index) =>
