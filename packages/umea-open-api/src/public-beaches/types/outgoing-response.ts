@@ -1,12 +1,15 @@
-import { Geometry } from "./incoming-response"
+export type Coordinate = {
+  lat: number;
+  lon: number;
+};
 
 export type Beach = {
-    id: string
-    name: string
-    area: string
-    facilityId: string
-    timestamp: string
-    geometry: Geometry
-    handicapAccesible: boolean 
-    managedBy: string | null
-}
+  id: string;
+  name: string;
+  area: string;
+  facilityId: string;
+  timestamp: string;
+  handicapAccesible: boolean;
+  coordinate?: Coordinate;
+  managedBy?: string;
+};
