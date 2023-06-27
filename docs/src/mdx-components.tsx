@@ -4,10 +4,11 @@ import { Callout } from "@/components/mdx/callout";
 import { Codeblock } from "@/components/mdx/code-block";
 import type { MDXComponents } from "mdx/types";
 
-// This file is required to use MDX in `app` directory.
+import { CopyButton, NpmCommandCopyButton } from "./components/mdx/copy-button";
+import { NpmCommands } from "./types/unist";
+
 export function useMDXComponents(components: MDXComponents): MDXComponents {
   return {
-    // Allows customizing built-in components, e.g. to add styling.
     h1: (props) => (
       <h1 className="mt-10 scroll-m-20 font-cal text-4xl" {...props} />
     ),
@@ -48,11 +49,41 @@ export function useMDXComponents(components: MDXComponents): MDXComponents {
         {...props}
       />
     ),
-    pre: Codeblock,
-
+    pre: ({
+      __npmCommand__,
+      __pnpmCommand__,
+      __yarnCommand__,
+      __rawString__,
+      ...props
+    }: React.HTMLAttributes<HTMLPreElement> &
+      NpmCommands & { __rawString__?: string }) => {
+      const theme = props["data-theme"] as string;
+      const isPnCommand = __npmCommand__ && __pnpmCommand__ && __yarnCommand__;
+      return (
+        <div className="relative">
+          <Codeblock {...props} />
+          {isPnCommand && (
+            <NpmCommandCopyButton
+              className="absolute right-2 top-[10px] z-20"
+              commands={{
+                __npmCommand__,
+                __pnpmCommand__,
+                __yarnCommand__,
+              }}
+              theme={theme}
+            />
+          )}
+          {__rawString__ && (
+            <CopyButton
+              className="absolute right-2 top-[10px] z-20"
+              theme={theme}
+              rawString={__rawString__}
+            />
+          )}
+        </div>
+      );
+    },
     img: (props) => <img {...props} className="rounded-lg" />,
-
-    // Add custom components.
     Callout,
     Steps: ({ ...props }) => (
       <div
@@ -61,7 +92,6 @@ export function useMDXComponents(components: MDXComponents): MDXComponents {
       />
     ),
 
-    // Pass through all other components.
     ...components,
   };
 }
