@@ -11,6 +11,7 @@
   "dependencies": {
     "@mdx-js/loader": "^2.3.0",
     "@next/mdx": "^13.4.7",
+    "@radix-ui/react-dropdown-menu": "^2.0.5",
     "@radix-ui/react-popover": "^1.0.6",
     "@radix-ui/react-scroll-area": "^1.0.4",
     "@vercel/analytics": "^1.0.1",
@@ -38,6 +39,8 @@
     "eslint-config-next": "^13.4.7",
     "postcss": "^8.4.24",
     "tailwindcss": "^3.3.2",
-    "typescript": "^5.0.4"
+    "typescript": "^5.0.4",
+    "unist-builder": "^3.0.0",
+    "unist-util-visit": "^4.1.2"
   }
 }
