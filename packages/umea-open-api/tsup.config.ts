@@ -1,17 +1,17 @@
 import { defineConfig } from "tsup";
 
 const env = process.env.NODE_ENV;
+const isDev = process.env.npm_lifecycle_event === "dev";
 
 export default defineConfig((opts) => ({
   entryPoints: ["src/index.ts"],
   entry: ["src/**/*.ts"],
   format: ["esm", "cjs"],
   minify: env === "production",
-  bundle: env === "production",
-  skipNodeModulesBundle: true,
   clean: !opts.watch,
   dts: true,
   outDir: "dist",
-  target: "es2020",
+  target: "node16",
   treeshake: true,
+  onSuccess: isDev ? "node dist/index.js" : undefined,
 }));

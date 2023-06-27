@@ -1,5 +1,5 @@
 {
-  "name": "@kodverk/open-api-umea",
+  "name": "@kodverk/umea-open-api",
   "version": "0.1.1",
   "type": "module",
   "main": "dist/index.js",
@@ -21,8 +21,8 @@
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/kodverk/umea-open-api",
-    "directory": "packages/open-api-umea"
+    "url": "https://github.com/kodverk/open-api",
+    "directory": "packages/umea-open-api"
   },
   "files": [
     "dist",
@@ -40,6 +40,7 @@
     "typecheck": "tsc --noEmit"
   },
   "devDependencies": {
+    "@faker-js/faker": "^8.0.2",
     "eslint": "^8.39.0",
     "tsup": "^6.7.0",
     "typescript": "^5.0.4"

@@ -1,6 +1,6 @@
 # Code of Conduct
 
-As contributors and maintainers of the open-api-umea project, we pledge to create a welcoming and inclusive environment for everyone. We value the participation of every individual and are committed to providing a positive experience for all.
+As contributors and maintainers of the umea-open-api project, we pledge to create a welcoming and inclusive environment for everyone. We value the participation of every individual and are committed to providing a positive experience for all.
 
 By contributing to this project, you agree to abide by the following code of conduct. Violations of this code may result in consequences determined by the project maintainers.
 
