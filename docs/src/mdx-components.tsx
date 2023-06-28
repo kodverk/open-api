@@ -4,6 +4,8 @@ import { Callout } from "@/components/mdx/callout";
 import { Codeblock } from "@/components/mdx/code-block";
 import type { MDXComponents } from "mdx/types";
 
+import { Pager } from "./components/mdx/pager";
+
 export function useMDXComponents(components: MDXComponents): MDXComponents {
   return {
     h1: (props) => (
@@ -51,6 +53,9 @@ export function useMDXComponents(components: MDXComponents): MDXComponents {
     },
     img: (props) => <img {...props} className="rounded-lg" />,
     Callout,
+    Pager: ({ ...props }) => (
+      <Pager {...props} className="mt-12 border-t pt-8" />
+    ),
     Steps: ({ ...props }) => (
       <div
         className="[&>h3]:step mb-12 ml-4 border-l pl-6 [counter-reset:step]"
