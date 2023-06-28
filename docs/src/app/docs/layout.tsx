@@ -1,5 +1,6 @@
 import { ReactNode } from "react";
 import { siteConfig } from "@/app/site-config";
+import { Pager } from "@/components/pager";
 import { DocsSidebarNav } from "@/components/sidebar";
 import { ScrollArea } from "@/components/ui/scroll-area";
 
@@ -11,7 +12,10 @@ export default function DocsLayout(props: { children: ReactNode }) {
           <DocsSidebarNav items={siteConfig.sidebarNav} />
         </ScrollArea>
       </aside>
-      <main className="max-w-3xl pb-16">{props.children}</main>
+      <main className="max-w-3xl pb-16">
+        {props.children}
+        <Pager className="mt-12 border-t pt-6" />
+      </main>
     </div>
   );
 }
