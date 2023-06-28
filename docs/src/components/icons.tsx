@@ -6,6 +6,7 @@ import {
   Command,
   LucideProps,
   Moon,
+  Pen,
   SunMedium,
   TerminalSquare,
   Twitter,
@@ -23,6 +24,7 @@ export const Icons = {
   chevronRight: ChevronRightIcon,
   chevronLeft: ChevronLeftIcon,
   circleDot: CircleDot,
+  pen: Pen,
   gitHub: (props: LucideProps) => (
     <svg viewBox="0 0 438.549 438.549" {...props}>
       <path
