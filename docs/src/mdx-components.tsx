@@ -4,9 +4,6 @@ import { Callout } from "@/components/mdx/callout";
 import { Codeblock } from "@/components/mdx/code-block";
 import type { MDXComponents } from "mdx/types";
 
-import { CopyButton, NpmCommandCopyButton } from "./components/mdx/copy-button";
-import { NpmCommands } from "./types/unist";
-
 export function useMDXComponents(components: MDXComponents): MDXComponents {
   return {
     h1: (props) => (
@@ -49,39 +46,8 @@ export function useMDXComponents(components: MDXComponents): MDXComponents {
         {...props}
       />
     ),
-    pre: ({
-      __npmCommand__,
-      __pnpmCommand__,
-      __yarnCommand__,
-      __rawString__,
-      ...props
-    }: React.HTMLAttributes<HTMLPreElement> &
-      NpmCommands & { __rawString__?: string }) => {
-      const theme = props["data-theme"] as string;
-      const isPnCommand = __npmCommand__ && __pnpmCommand__ && __yarnCommand__;
-      return (
-        <div className="relative">
-          <Codeblock {...props} />
-          {isPnCommand && (
-            <NpmCommandCopyButton
-              className="absolute right-2 top-[10px] z-20"
-              commands={{
-                __npmCommand__,
-                __pnpmCommand__,
-                __yarnCommand__,
-              }}
-              theme={theme}
-            />
-          )}
-          {__rawString__ && (
-            <CopyButton
-              className="absolute right-2 top-[10px] z-20"
-              theme={theme}
-              rawString={__rawString__}
-            />
-          )}
-        </div>
-      );
+    pre: ({ ...props }: React.HTMLAttributes<HTMLPreElement>) => {
+      return <Codeblock {...props} />;
     },
     img: (props) => <img {...props} className="rounded-lg" />,
     Callout,

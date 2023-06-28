@@ -8,7 +8,7 @@ import {
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
 import { cn } from "@/lib/cn";
-import { NpmCommands } from "@/types/unist";
+import { NpmCommands } from "@/types/npm-commands";
 import { CheckCheck, Copy } from "lucide-react";
 
 function copyToClipboard(text: string) {
@@ -28,7 +28,6 @@ const useCopyToClipboard = () => {
   }, [copied]);
 
   const copy = (text: string) => {
-    console.log({ copy: text });
     copyToClipboard(text);
     setCopied(true);
   };
@@ -120,7 +119,7 @@ export function NpmCommandCopyButton({
           <button
             className="w-full"
             value="pnpm"
-            onClick={() => handleCopy(commands.__pnpmCommand__)}
+            onClick={() => handleCopy(commands.pnpmCommand)}
           >
             pnpm
           </button>
@@ -129,7 +128,7 @@ export function NpmCommandCopyButton({
           <button
             className="w-full"
             value="npm"
-            onClick={() => handleCopy(commands.__npmCommand__)}
+            onClick={() => handleCopy(commands.npmCommand)}
           >
             npm
           </button>
@@ -138,7 +137,7 @@ export function NpmCommandCopyButton({
           <button
             className="w-full"
             value="yarn"
-            onClick={() => handleCopy(commands.__yarnCommand__)}
+            onClick={() => handleCopy(commands.yarnCommand)}
           >
             yarn
           </button>

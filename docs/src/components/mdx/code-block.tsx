@@ -1,16 +1,16 @@
 "use client";
 
-import { useRef } from "react";
+import { useMemo, useRef } from "react";
+import { NpmCommands } from "@/types/npm-commands";
 
 import { Icons } from "../icons";
+import { CopyButton, NpmCommandCopyButton } from "./copy-button";
 
 export type CodeblockProps = React.DetailedHTMLProps<
   React.HTMLAttributes<HTMLPreElement>,
   HTMLPreElement
 > & {
-  /** set by `rehype-pretty-code` */
   "data-language"?: string;
-  /** set by `rehype-pretty-code` */
   "data-theme"?: string;
 };
 
@@ -27,8 +27,24 @@ export function Codeblock(props: CodeblockProps) {
 
   const ref = useRef<HTMLPreElement>(null);
 
+  const commands = useMemo(() => {
+    if (typeof window === "undefined" || !ref.current) return;
+    const content = ref.current.innerText;
+    if (!content?.startsWith("npm install")) return;
+    return {
+      npmCommand: content,
+      pnpmCommand: content.replace("npm install", "pnpm add"),
+      yarnCommand: content.replace("npm install", "yarn add"),
+    } satisfies NpmCommands;
+  }, [ref.current, typeof window]);
+
+  const rawString = useMemo(() => {
+    if (typeof window === "undefined" || !ref.current) return;
+    return ref.current.innerText;
+  }, [ref.current, typeof window]);
+
   return (
-    <>
+    <div>
       {Icon && (
         <Icon
           data-language-icon
@@ -43,6 +59,20 @@ export function Codeblock(props: CodeblockProps) {
       >
         {children}
       </pre>
-    </>
+      {commands && (
+        <NpmCommandCopyButton
+          className="absolute right-2 top-[10px] z-20"
+          commands={commands}
+          theme={theme}
+        />
+      )}
+      {!commands && rawString && (
+        <CopyButton
+          className="absolute right-2 top-[10px] z-20"
+          theme={theme}
+          rawString={rawString}
+        />
+      )}
+    </div>
   );
 }
