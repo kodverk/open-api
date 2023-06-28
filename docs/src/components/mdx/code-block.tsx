@@ -1,6 +1,6 @@
 "use client";
 
-import { useMemo, useRef } from "react";
+import { useLayoutEffect, useRef, useState } from "react";
 import { NpmCommands } from "@/types/npm-commands";
 
 import { Icons } from "../icons";
@@ -18,6 +18,9 @@ export function Codeblock(props: CodeblockProps) {
   const { children, ...rest } = props;
   const language = props["data-language"] as string;
   const theme = props["data-theme"] as string;
+  const [commands, setCommands] = useState<NpmCommands | null>(null);
+  const [rawString, setRawString] = useState("");
+
   const Icon = {
     js: Icons.javascript,
     ts: Icons.typescript,
@@ -27,24 +30,21 @@ export function Codeblock(props: CodeblockProps) {
 
   const ref = useRef<HTMLPreElement>(null);
 
-  const commands = useMemo(() => {
-    if (typeof window === "undefined" || !ref.current) return;
+  useLayoutEffect(() => {
+    if (!ref.current?.innerText) return;
     const content = ref.current.innerText;
-    if (!content?.startsWith("npm install")) return;
-    return {
+    if (!content?.startsWith("npm install")) {
+      return setRawString(content);
+    }
+    return setCommands({
       npmCommand: content,
       pnpmCommand: content.replace("npm install", "pnpm add"),
       yarnCommand: content.replace("npm install", "yarn add"),
-    } satisfies NpmCommands;
-  }, [ref.current, typeof window]);
-
-  const rawString = useMemo(() => {
-    if (typeof window === "undefined" || !ref.current) return;
-    return ref.current.innerText;
-  }, [ref.current, typeof window]);
+    });
+  }, [ref.current]);
 
   return (
-    <div>
+    <>
       {Icon && (
         <Icon
           data-language-icon
@@ -73,6 +73,6 @@ export function Codeblock(props: CodeblockProps) {
           rawString={rawString}
         />
       )}
-    </div>
+    </>
   );
 }
