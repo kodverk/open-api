@@ -1,4 +1,7 @@
 import {
+  CheckIcon,
+  ChevronRightIcon,
+  CircleDot,
   Command,
   LucideProps,
   Moon,
@@ -15,6 +18,9 @@ export const Icons = {
   moon: Moon,
   twitter: Twitter,
   logo: Command,
+  check: CheckIcon,
+  chevronRight: ChevronRightIcon,
+  circleDot: CircleDot,
   gitHub: (props: LucideProps) => (
     <svg viewBox="0 0 438.549 438.549" {...props}>
       <path

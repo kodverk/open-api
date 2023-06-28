@@ -14,8 +14,8 @@
     "lint:fix": "turbo lint -- --fix && manypkg fix",
     "test": "turbo test",
     "typecheck": "turbo typecheck",
-    "format": "prettier --write \"**/*.{js,cjs,mjs,ts,tsx,md,json}\" --ignore-path .gitignore",
-    "format:check": "prettier --check \"**/*.{js,cjs,mjs,ts,tsx,md,json}\" --ignore-path .gitignore"
+    "format": "prettier --write \"**/*.{js,cjs,mjs,ts,tsx,md,json,css}\" --ignore-path .gitignore",
+    "format:check": "prettier --check \"**/*.{js,cjs,mjs,ts,tsx,md,json,css}\" --ignore-path .gitignore"
   },
   "dependencies": {
     "@changesets/changelog-github": "^0.4.8",

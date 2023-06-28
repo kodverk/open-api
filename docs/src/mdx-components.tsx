@@ -4,10 +4,8 @@ import { Callout } from "@/components/mdx/callout";
 import { Codeblock } from "@/components/mdx/code-block";
 import type { MDXComponents } from "mdx/types";
 
-// This file is required to use MDX in `app` directory.
 export function useMDXComponents(components: MDXComponents): MDXComponents {
   return {
-    // Allows customizing built-in components, e.g. to add styling.
     h1: (props) => (
       <h1 className="mt-10 scroll-m-20 font-cal text-4xl" {...props} />
     ),
@@ -48,11 +46,10 @@ export function useMDXComponents(components: MDXComponents): MDXComponents {
         {...props}
       />
     ),
-    pre: Codeblock,
-
+    pre: ({ ...props }: React.HTMLAttributes<HTMLPreElement>) => {
+      return <Codeblock {...props} />;
+    },
     img: (props) => <img {...props} className="rounded-lg" />,
-
-    // Add custom components.
     Callout,
     Steps: ({ ...props }) => (
       <div
@@ -61,7 +58,6 @@ export function useMDXComponents(components: MDXComponents): MDXComponents {
       />
     ),
 
-    // Pass through all other components.
     ...components,
   };
 }
