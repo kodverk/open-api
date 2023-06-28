@@ -7,3 +7,9 @@
 
 "📌 area: ci":
   - any: [".github/**/*"]
+
+"🏭 area: packages":
+  - any: ["packages/**/*"]
+
+"🍂 umea-open-api":
+  - any: ["packages/umea-open-api/**/*"]
