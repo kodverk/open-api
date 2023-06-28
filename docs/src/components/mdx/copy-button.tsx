@@ -73,7 +73,7 @@ export function CopyButton({ className, theme, rawString }: CopyButtonProps) {
 
 interface NpmCommandCopyButtonProps {
   theme: string;
-  commands: Required<NpmCommands>;
+  commands: NpmCommands;
   className?: string;
 }
 

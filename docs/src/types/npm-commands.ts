@@ -1,5 +1,5 @@
 export interface NpmCommands {
-  npmCommand?: string;
-  yarnCommand?: string;
-  pnpmCommand?: string;
+  npmCommand: string;
+  yarnCommand: string;
+  pnpmCommand: string;
 }
