@@ -4,6 +4,8 @@ import { Pager } from "@/components/pager";
 import { DocsSidebarNav } from "@/components/sidebar";
 import { ScrollArea } from "@/components/ui/scroll-area";
 
+import { EditPageMeta } from "./edit-page-meta";
+
 export default function DocsLayout(props: { children: ReactNode }) {
   return (
     <div className="container flex-1 items-start md:grid md:grid-cols-[220px_minmax(0,1fr)] md:gap-6 lg:grid-cols-[256px_minmax(0,1fr)] lg:gap-10">
@@ -15,6 +17,7 @@ export default function DocsLayout(props: { children: ReactNode }) {
       <main className="max-w-3xl pb-16">
         {props.children}
         <Pager className="mt-12 border-t pt-6" />
+        <EditPageMeta />
       </main>
     </div>
   );
