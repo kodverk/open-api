@@ -10,7 +10,8 @@ export const siteConfig = {
   ],
   sidebarNav: [
     {
-      title: "Monorepo Setup",
+      // all itmes should have emojis
+      title: "📚 Kodverk Open API",
       items: [
         {
           title: "Introduction",
@@ -18,18 +19,28 @@ export const siteConfig = {
           items: [],
         },
         {
-          title: "Release",
+          title: "Quick Start 🚀",
+          href: "/docs/quick-start",
+          items: [],
+        },
+        {
+          title: "Releases",
           href: "/docs/release",
           items: [],
         },
       ],
     },
     {
-      title: "Umeå Open API",
+      title: "🍃 Umeå Open API",
       items: [
         {
+          title: "Introduction",
+          href: "/docs/umea/introduction",
+          items: [],
+        },
+        {
           title: "Public Beaches",
-          href: "/docs/public-beaches",
+          href: "/docs/umea/public-beaches",
           items: [],
         },
       ],
