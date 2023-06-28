@@ -1,5 +1,11 @@
 # @kodverket/umea-open-api
 
+## 0.2.1
+
+### Patch Changes
+
+- [#28](https://github.com/kodverk/open-api/pull/28) [`fa25c5d`](https://github.com/kodverk/open-api/commit/fa25c5dcb51ae5d2f028f1717f1d2258b3845672) Thanks [@JohnVicke](https://github.com/JohnVicke)! - update options
+
 ## 0.2.0
 
 ### Minor Changes
