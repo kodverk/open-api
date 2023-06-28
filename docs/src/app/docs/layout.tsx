@@ -16,8 +16,8 @@ export default function DocsLayout(props: { children: ReactNode }) {
       </aside>
       <main className="max-w-3xl pb-16">
         {props.children}
-        <Pager className="mt-12 border-t pt-6" />
-        <EditPageMeta />
+        <EditPageMeta className="mt-16" />
+        <Pager className="mt-4 border-t pt-6" />
       </main>
     </div>
   );
