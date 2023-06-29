@@ -7,13 +7,19 @@ This repo contains an node-wrapper for Umeå municipality's [public beaches API]
 <Steps>
 
 ### Install dependencies
-
 ```bash
 npm install -D @kodverket/umea-public-beaches
 ```
 
-```bash
-this is a random code block
+### Import API wrapper.
+```javascript
+import { UmeaOpenAPI } from "@kodverk/umea-open-api"
+```
+
+### Begin using the wrapper.
+```javascript
+const api = new UmeaOpenAPI()
+const response = await api.publicBeaches.get()
 ```
 
 </Steps>
